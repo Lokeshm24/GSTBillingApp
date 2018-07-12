@@ -1,0 +1,143 @@
+body{
+    padding: 0;
+    background-color: #5bb8e0;
+}
+
+.navBar{
+    position: fixed;
+}
+
+.inptLabel{
+    display: block;
+    font-family: arial;
+    height: 20px;
+}
+
+.divRow{
+    height: 80px;
+}
+
+.entryForm{
+    width: 400px;
+    padding: 40px;
+    padding-top: 10px;
+    margin: 0px auto;
+    background: white;
+    box-shadow: 0px 5px 50px 2px grey;
+    transform: translateY(10%);
+}
+
+.inputBox{
+    border: 2px solid lightblue;
+    border-radius: 6px;
+    padding: 5px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 120%;
+    width: 100%;
+}
+
+.inputBox:focus{
+    border-color: #5598dc;
+    box-shadow: 0px 2px 15px 0px #ddd;
+}
+
+.opts{
+    height: 50px;
+}
+
+.btn {
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0px 2px 5px 1px #ccc;
+    transition-duration: 0.3s;
+}
+
+.submitButton{
+    border: 0;
+    border-radius: 6px;
+    position: relative;
+    font-family: 'Varela Round', sans-serif;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    width: 130px;
+    background: coral;
+    font-size: 20px;
+    top: 20px;
+    margin: auto;
+}
+
+.btn:hover{
+	box-shadow: 0px 3px 15px 1px #ccc;
+}
+
+.submitButton:hover{
+    background: #e66f3e;
+}
+
+.ripple {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(0);
+    position: absolute;
+    opacity: 1;
+}
+.rippleEffect {
+    animation: rippleDrop .4s linear;
+}
+
+@keyframes rippleDrop {
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.formHeading{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 200%;
+    color: #449ef3;
+    text-align: center;
+    margin-bottom: 25px;
+    text-shadow: 0px 2px 1px #449ef3;
+}
+
+.swap{
+    background: white;
+    position: absolute;
+    width: 50px;
+    line-height: 50px;
+    height: 47px;
+    text-align: center;
+    box-shadow: 0px 2px 10px 0px grey;
+    border-radius: 50%;
+    font-size: 25px;
+    text-shadow: 0px 1px 3px grey;
+    top: 45%;
+    right: 5%;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.swap:hover{
+    box-shadow: 0px 2px 20px 0px #555;
+}
+
+.swap:hover .tooltip{
+    visibility: visible;
+}
+
+.tooltip{
+    visibility: hidden;
+    background: white;
+    position: absolute;
+    left: -50%;
+    top: 60px;
+    font-size: 15px;
+    text-shadow: none;
+    width: 100px;
+    line-height: 32px;
+    transition-duration: 0.4s;
+}
