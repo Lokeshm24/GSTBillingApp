@@ -13,13 +13,38 @@
             <div class="formHeading">Enter a new product</div>
             <div class="divRow"><label class="inptLabel">Product Code</label><input type="text" class="inputBox" id="prod_code" maxlength="16" placeholder="eg. 4783"/></div>
             <div class="divRow"><label class="inptLabel">Product Name</label><input type="text" class="inputBox" id="prod_name" placeholder="eg. Biscuit"/></div>
-            <div class="divRow"><label class="inptLabel">Price</label><input type="text" class="inputBox" id="prod_price" placeholder="eg. 40"/></div>
-            <div class="divRow"><label class="inptLabel">GST(in percent)</label><input type="text" class="inputBox" id="prod_gst" placeholder="eg. 20"/></div>
+            <div class="divRow"><label class="inptLabel">Price</label><input type="text" class="inputBox" id="prod_price" placeholder="eg. 40" maxlength="5"/></div>
+            <div class="divRow"><label class="inptLabel">GST(in percent)</label><input type="text" class="inputBox" id="prod_gst" placeholder="eg. 20" maxlength="2" /></div>
             <div class="opts"><div class="submitButton btn">Submit</div></div>        
         </div>
-        <div class="billingForm">
-            
+        <div class="disButton btn" onclick="app.showProd()">Show Products</div>
+        <div class="allProd disabled">
+            <table class="disProd">
+                   <tr>
+                       <th>S.No.</th>
+                       <th>Product Name</th>
+                       <th>Product Code</th>
+                       <th>Price</th>
+                       <th>GST(in percent)</th>
+                   </tr>
+            </table>
         </div>
-        <div class="swap">><span class="tooltip">Billing</span></div>
+        <div class="billingForm disabled">
+            <div class="formHeading">Billing</div>
+            <div class="divRow" id="searchBox"><label class="inptLabel">Search</label><input type="text" class="inputBox1" id="searchBar" placeholder="Enter product name or product code"/></div>
+            <div class="box">
+               <table>
+                   <tr>
+                       <th>S.No.</th>
+                       <th>Product Name</th>
+                       <th>Product Code</th>
+                       <th>Quantity</th>
+                       <th>Price</th>
+                   </tr>
+               </table>
+            </div>
+        </div>
+        <div class="swap" onclick="app.Switch()">></div>
+        
     </body>
 </html>

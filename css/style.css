@@ -1,6 +1,11 @@
 body{
     padding: 0;
     background-color: #5bb8e0;
+    transition-duration: 0.5s;
+}
+
+.active{
+    background-color: #b794f6dd !important;
 }
 
 .navBar{
@@ -15,19 +20,32 @@ body{
 
 .divRow{
     height: 80px;
+    position: relative;
 }
 
-.entryForm{
-    width: 400px;
+input::placeholder{
+    opacity: 0.4;
+}
+
+.entryForm,.billingForm,.allProd{
+    width: 600px;
     padding: 40px;
-    padding-top: 10px;
+    padding-top: 20px;
     margin: 0px auto;
     background: white;
     box-shadow: 0px 5px 50px 2px grey;
-    transform: translateY(10%);
+    margin-top: 75px;
 }
 
-.inputBox{
+.entryForm{
+}
+
+.billingForm{
+    display: none;
+    width: 600px;
+}
+
+.inputBox,.inputBox1{
     border: 2px solid lightblue;
     border-radius: 6px;
     padding: 5px;
@@ -36,7 +54,7 @@ body{
     width: 100%;
 }
 
-.inputBox:focus{
+.inputBox:focus, .inputBox:focus{
     border-color: #5598dc;
     box-shadow: 0px 2px 15px 0px #ddd;
 }
@@ -106,17 +124,17 @@ body{
 
 .swap{
     background: white;
-    position: absolute;
+    position: fixed;
     width: 50px;
-    line-height: 50px;
-    height: 47px;
+    line-height: 44px;
+    height: 45px;
     text-align: center;
     box-shadow: 0px 2px 10px 0px grey;
     border-radius: 50%;
     font-size: 25px;
     text-shadow: 0px 1px 3px grey;
-    top: 45%;
-    right: 5%;
+    top: 2px;
+    right: 25%;
     transition-duration: 0.3s;
     cursor: pointer;
 }
@@ -126,18 +144,138 @@ body{
 }
 
 .swap:hover .tooltip{
-    visibility: visible;
+    opacity: 1;
 }
 
-.tooltip{
-    visibility: hidden;
-    background: white;
+.box{
+    font-family: 'Verela Round',sans-serif;
+    font-size: 22px;
+    color: #444;
+    border: 2px solid #444;
+    padding: 10px;
+    margin-top: 30px;
+    width: 100%;
+    display: none;
+}
+
+table{
+    width: 100%;
+    border: collapse;
+}
+
+th{
+    font-size: 12px;
+    text-align: left;
+    border-bottom: 1px solid;
+}
+
+tr{
+    height: 40px;
+}
+
+tr:first-child{
+    height: 20px;
+}
+
+td{
+    position: relative;
+    width: 100px !important;
+    padding: 6px;
+}
+
+.error{
+    color: crimson;
     position: absolute;
-    left: -50%;
-    top: 60px;
-    font-size: 15px;
-    text-shadow: none;
-    width: 100px;
-    line-height: 32px;
-    transition-duration: 0.4s;
+    top:63px;
+    left:6px;
+    font-family: arial;
+    word-spacing: 1px;
+}
+
+.gstInc{
+    font-size: 12px;
+    position: absolute;
+    top: 38px;
+    left: 5px;
+}
+
+.total td{
+    border-top: 2px solid #555;
+    line-height: 35px;
+}
+
+#quantity{
+    -webkit-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none; 
+    user-select: none; 
+}
+
+.decrease,.increase{
+    padding: 10px;
+    cursor: pointer;
+}
+
+#quant{
+    width:30px;
+    border: 0;
+    text-align: center;
+}
+
+.prodItem{
+    height: 52px;
+}
+
+.allProd{
+    font-family: 'Verela Round', sans-serif;
+    display: none;
+}
+
+.disButton{
+    width: 200px;
+    position: fixed;
+    overflow: hidden;
+    left: 580px;
+    left: calc(50% - 100px);
+    top: 2px;
+    border-radius: 6px;
+    z-index: 100;
+    border:3px solid #1bb51b;
+    color: #1bb51b;
+    background: white;
+    text-align: center;
+    line-height: 40px;
+    font-family: 'Verela Round', sans-serif;
+}
+
+.disabled{
+/*    display: none !important;*/
+}
+
+.prodDis{
+    border:3px solid crimson !important;
+    color: crimson !important;
+}
+
+.noItem{
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 830px){
+    .entryForm,.billingForm,.allProd{
+        width: 80%;
+    }
+    
+    .swap{
+        position: fixed;
+        right: 10px
+    }
+    
+    body{
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        overflow-x: hidden;
+    }
 }
